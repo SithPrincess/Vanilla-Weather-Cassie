@@ -15,6 +15,7 @@ function searchSubmit(Event) {
   let searchInput = document.querySelector("#search-input");
   let cityCurrent = document.querySelector("#current-city");
   cityCurrent.innerHTML = searchInput.value;
+  searchCity = searchInput.value;
 }
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchSubmit);
