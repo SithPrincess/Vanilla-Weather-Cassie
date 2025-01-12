@@ -1,7 +1,7 @@
 function updateWeatherDetails(response) {
-  let tempertureCurrent = document.querySelector("#current-temperture");
-  let temperture = response.data.temperture.current;
-  tempertureCurrent.innerHTML = Math.round(temperture);
+  let temperatureCurrent = document.querySelector("#current-temperature");
+  let temperature = response.data.temperature.current;
+  temperatureCurrent.innerHTML = Math.round(temperature);
 }
 
 function searchCity(city) {
