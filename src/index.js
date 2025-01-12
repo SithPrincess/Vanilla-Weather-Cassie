@@ -2,8 +2,44 @@ function updateWeatherDetails(response) {
   let temperatureCurrent = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityCurrent = document.querySelector("#current-city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#wind-speed");
+  let timeElement = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
+
   cityCurrent.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
+  timeElement.innerHTML = formatDate(date);
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed} mph`;
   temperatureCurrent.innerHTML = Math.round(temperature);
+}
+function formatDate(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[date.getDay()];
+
+  return `${day} ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
