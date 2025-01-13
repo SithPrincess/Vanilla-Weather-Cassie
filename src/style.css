@@ -52,7 +52,6 @@ main {
 .current-temperature {
   font-size: 48px;
 }
-
 .current-weather {
   color: rgb(109, 49, 144);
   display: flex;
@@ -65,41 +64,43 @@ main {
   font-weight: 900;
   margin: 0;
 }
-.current-details {
-  color: darkorchid;
+.current-details{
+  font-weight:bolder;
+  color: rgb(149, 14, 207);
   font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
 }
-
-.current-details strong {
+.humidity{
   color: palevioletred;
-  font-size: 16px;
+  font-style:italic;
 }
-
+.wind-speed{
+  color:palevioletred;
+  font-style:italic;
+}
+.current-temperature-container{
+   display: flex;
+}
 .current-temperature-icon {
- position:relative;
- height: 100px;
- width: 90px;
- 
+ width: 88px;
+  height: 88px;
 }
 
 .current-temperature-value {
-  font-size: 80px;
+ font-size: 88px;
+  line-height: 88px;
   font-weight: bold;
-  line-height:120px;
 }
 
 .current-temperature-unit {
+ margin-top: 6px;
   font-size: 28px;
-  position: relative;
-  top: -38px;
 }
+  
+
 
 footer {
   border-top: 1px solid #f9f7fe;
   text-align: center;
   padding-top: 15px;
-
   color: darkorchid;
 }
